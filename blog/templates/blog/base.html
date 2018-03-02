@@ -1,34 +1,52 @@
 {% load staticfiles %}
 
 <html>
-
     <head>
-
-        <title>Mehul Solanki's blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/3.2.0/css/bootstrap.min.css">
-        <link rel="style sheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <title>Mehul Solanki's Blog</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
+        <!-- <link rel="shortcut icon" type="image/png" href="/blogicon.png"> -->
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'css/icon.png' %}">
     </head>
-
     <body>
         <div class="page-header">
-        {% if user.is_authenticated %}
-             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
+            {% if user.is_authenticated %}
+                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
 
-            <h1><a href="/">Mehul Solanki's Blog</a></h1>
-            
+            <h1 class="text-center"><a href="/" id="big-font">Mehul Solanki's Blog</a></h1>
         </div>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
+                    {% block content %}
+                    {% endblock %}
                 </div>
+
+                <div class="col-md-4 blog-sidebar">
+                    <div class="sidebar-module sidebar-module-inset side">
+                        <h4>About</h4>
+                        <p>This is a simple blog application made in Djano with admin access. The admin can add new posts and the same will be reflected on this page. The admin can even edit older posts. All the posts in this page are just dummy texts and does not reflect anything</p>
+                    </div>
+                </div><!-- /.blog-sidebar -->
             </div>
         </div>
-    </body>
 
+    <footer class="footer" id="contact">
+  <div class="footer-top section">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-md-6">
+          <p>Copyright © 2018. All Rights Reserved.<br><br>Made with <i class="glyphicon glyphicon-heart"></i> by <a href="#" style="text-decoration: none">Mehul Solanki</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </footer>
+  <!-- footer top --> 
+
+    </body>
 </html>
