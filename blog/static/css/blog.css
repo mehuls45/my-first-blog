@@ -4,9 +4,10 @@ body{
 }
 
 h1 a{
-	color : #FCA205;
-	font-family: 'Lobster';	
+	color : #673AB7;
+	font-family: 'Roboto Slab', serif;	
     text-decoration: none;
+    font-weight: bold;
 }
 
 p {
